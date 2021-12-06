@@ -26,4 +26,5 @@ app.use('/api/url', require('../routes/url'))
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT} :D`);
+  console.log(`Open swagger on  http://127.0.0.1:${PORT}/apis`);
 });
