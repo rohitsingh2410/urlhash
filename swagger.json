@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0", 
+      "title": "Demo URL Hasher",
+      "description": "Demo Project"
+    },
+    "host": "localhost:3001",
+    "basePath": "/apis",
+    "tags": [
+      {
+        "name": "Redirect",
+        "description": "API redirect users to hashed urls"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+        "paths": {
+          "/api/url/shorten": {
+            "post": {
+              "tags": ["Urls"],
+              "summary": "Generate a shortened URL",
+              
+          "parameters": [
+            {
+              "name": "postURL",
+              "in": "body",
+              "description": "postURL that we want to create",
+              "schema": {
+                "$ref": "#/definitions/postURL"
+              }
+            }
+          ],
+              "responses": {
+                "200": {
+                  "description": "OK",
+                  "schema": {
+                    "$ref": "#/definitions/Url"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "definitions": {
+          "Url": {
+            "properties": {
+              "_id": {
+                "type": "integer",
+                "uniqueItems": true
+              },
+              "urlCode": {
+                "type": "string"
+              },
+              "longUrl": {
+                "type": "string"
+              },
+              "shortUrl": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              }
+            }
+          },
+          "postURL": {
+            "type":"string",
+            "default": " {'longUrl':'http://example.com'}"
+          },
+          "Urls": {
+            "type": "array",
+            "$ref": "#/definitions/Url"
+          }
+        }
+      }
+  
