@@ -16,7 +16,10 @@ Application to short/hash a long URL and return a shortened URL.
 | :-------- | :------- | :------------------------- |
 | `longUrl` | `string` | **Required**. our very long URL |
 
-
+#### Open swagger documentatin using
+```http
+  http://localhost:3001/apis
+```
 
 ## usage
 
